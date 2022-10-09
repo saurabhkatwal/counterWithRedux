@@ -10,6 +10,14 @@ export class Counter extends Component {
   resetHandler=()=>{
     this.props.reset();
   }
+  stepHandler=(e)=>{
+    let selectedStep=Number(e.target.innerText);
+    this.props.setStep(selectedStep);
+  }
+  maxValueHandler=(e)=>{
+    let selectedMaxValue=Number(e.target.innerText);
+    this.props.setMaxValue(selectedMaxValue);
+  }
   render() {
     return (
       <div className='counter'>
@@ -20,17 +28,17 @@ export class Counter extends Component {
             <div className="steps">
               <h1>Steps</h1>
               <div className="buttons">
-                <button>5</button>
-                <button>10</button>
-                <button>15</button>
+                <button onClick={this.stepHandler}>5</button>
+                <button onClick={this.stepHandler}>10</button>
+                <button onClick={this.stepHandler}>15</button>
               </div>
             </div>
             <div className="max-steps">
                 <h1>Max Value</h1>
                 <div className="buttons">
-                  <button>15</button>
-                  <button>100</button>
-                  <button>200</button>
+                  <button onClick={this.maxValueHandler}>15</button>
+                  <button onClick={this.maxValueHandler}>100</button>
+                  <button onClick={this.maxValueHandler}>200</button>
                 </div>
             </div>
         </div>
@@ -61,6 +69,12 @@ return {
   },
   reset:()=>{
     dispatch({type:"reset"});
+  },
+  setStep:(selectedStep)=>{
+    dispatch({type:"setStep",increaseBy:selectedStep});
+  },
+  setMaxValue:(selectedMaxValue)=>{
+    dispatch({type:"setMaxValue",limit:selectedMaxValue});
   }
 }
 }
