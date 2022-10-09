@@ -57,3 +57,6 @@ button{
 .steps h1,.max-steps h1{
   font-weight: normal;
 }
+.counter-val h1{
+  font-size: 3rem;
+}
