@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #CCF3EE;
 }
 
 code {
@@ -15,4 +16,43 @@ code {
   display: flex;
   column-gap: 100px;
   margin-bottom: 50px;
+  justify-content: space-around;
+}
+.counter{
+  display:flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+h1{
+  text-align: center;
+}
+.counter-container{
+  min-width: 700px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+}
+button{
+  font-size: 28px;
+  background-color: darkblue;
+  color: #fff;
+  width: 70px;
+  padding: 10px;
+  cursor: pointer;
+}
+.steps>div,.max-steps>div{
+  min-width: 300px;
+}
+.counter-methods button{
+  background-color: rgba(22, 184, 8, 0.9);
+  color: #fff;
+  border-radius: 5px;
+  border: 0;
+  width: auto;
+  padding: 12px 19px;
+}
+.steps h1,.max-steps h1{
+  font-weight: normal;
 }

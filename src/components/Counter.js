@@ -37,6 +37,7 @@ export class Counter extends Component {
   render() {
     return (
       <div className='counter'>
+        <div className="counter-container">
         <div className="counter-val">
             <h1>{this.props.counter}</h1>
         </div>
@@ -60,10 +61,11 @@ export class Counter extends Component {
         </div>
         <div className="counter-methods">
           <div className="buttons">
-            <button onClick={this.incrementHandler}>increment</button>
-            <button onClick={this.decrementHandler}>decrement</button>
-            <button onClick={this.resetHandler}>reset</button>
+            <button onClick={this.incrementHandler}>Increment</button>
+            <button onClick={this.decrementHandler}>Decrement</button>
+            <button onClick={this.resetHandler}>Reset</button>
           </div>
+        </div>
         </div>
       </div>
     )
