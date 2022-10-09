@@ -41,6 +41,7 @@ button{
   width: 70px;
   padding: 10px;
   cursor: pointer;
+  border:0;
 }
 .steps>div,.max-steps>div{
   min-width: 300px;
