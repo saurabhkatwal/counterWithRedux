@@ -18,6 +18,22 @@ export class Counter extends Component {
     let selectedMaxValue=Number(e.target.innerText);
     this.props.setMaxValue(selectedMaxValue);
   }
+  changeStylesSet=(number)=>{
+    if(this.props.steps===number){
+      return {backgroundColor:'dodgerblue',color:'#fff'}
+    }
+    else{
+      return {}
+    }
+  }
+  changeStylesMax=(number)=>{
+    if(this.props.maxValue===number){
+      return {backgroundColor:'dodgerblue',color:'#fff'}
+    }
+    else{
+      return {}
+    }
+  }
   render() {
     return (
       <div className='counter'>
@@ -28,17 +44,17 @@ export class Counter extends Component {
             <div className="steps">
               <h1>Steps</h1>
               <div className="buttons">
-                <button onClick={this.stepHandler}>5</button>
-                <button onClick={this.stepHandler}>10</button>
-                <button onClick={this.stepHandler}>15</button>
+                <button style={this.changeStylesSet(5)} onClick={this.stepHandler}>5</button>
+                <button style={this.changeStylesSet(10)} onClick={this.stepHandler}>10</button>
+                <button style={this.changeStylesSet(15)} onClick={this.stepHandler}>15</button>
               </div>
             </div>
             <div className="max-steps">
                 <h1>Max Value</h1>
                 <div className="buttons">
-                  <button onClick={this.maxValueHandler}>15</button>
-                  <button onClick={this.maxValueHandler}>100</button>
-                  <button onClick={this.maxValueHandler}>200</button>
+                  <button style={this.changeStylesMax(15)} onClick={this.maxValueHandler}>15</button>
+                  <button style={this.changeStylesMax(100)} onClick={this.maxValueHandler}>100</button>
+                  <button style={this.changeStylesMax(200)} onClick={this.maxValueHandler}>200</button>
                 </div>
             </div>
         </div>
@@ -56,7 +72,8 @@ export class Counter extends Component {
 const mapStateToProps=(state)=>{
   return {
     counter:state.counter,
-    maxValue:state.maxValue
+    maxValue:state.maxValue,
+    steps:state.steps
   }
 }
 const mapDispatchToProps=(dispatch)=>{
